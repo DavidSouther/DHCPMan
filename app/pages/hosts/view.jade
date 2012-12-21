@@ -9,6 +9,9 @@
 				th IP
 				th MAC
 			tr(ng:repeat="host in hosts")
-				td {{ host.hostname() }}
-				td {{ host.ip() }}
-				td {{ host.mac() }}
+				td
+					inline(entity="host", property="hostname")
+				td
+					inline(entity="host", property="ip")
+				td
+					inline(entity="host", property="mac")

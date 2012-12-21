@@ -12,7 +12,7 @@ angular.classmap = !(module, map)-->
 angular.dhcpmanmap = angular.classmap \dhcpman
 
 
-angular.module \dhcpman, <[ jefri jquery ]>, !($routeProvider)->
+angular.module \dhcpman, <[ jefri jquery ui ]>, !($routeProvider)->
 	$routeProvider
 		.when '/', template: angular.element \#hosts
 		.when '/hosts', template: angular.element \#hosts

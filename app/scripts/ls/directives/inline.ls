@@ -18,9 +18,10 @@ Inline = ($) ->
 		$scope.save = !->
 			$scope.editing = no
 	link: !(scope, element, attrs) ->
-		scope.value = scope.entity[attrs.property]! || attrs.default
+		entity = attrs.entity || 'entity'
+		scope.value = scope[entity][attrs.property]! || attrs.default
 		scope.$watch 'value', !->
-			scope.entity[attrs.property](scope.value)
+			scope[entity][attrs.property](scope.value)
 
 angular.module \jefri
 	.directive \inline, [\jQuery, Inline]
