@@ -3,4 +3,12 @@
 		h2 Hosts
 
 	.container
-		| {{hosts}}
+		table
+			tr
+				th Hostname
+				th IP
+				th MAC
+			tr(ng:repeat="host in hosts")
+				td {{ host.hostname() }}
+				td {{ host.ip() }}
+				td {{ host.mac() }}
