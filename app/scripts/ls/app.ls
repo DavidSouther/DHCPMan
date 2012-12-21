@@ -15,6 +15,8 @@ angular.dhcpmanmap = angular.classmap \dhcpman
 angular.module \dhcpman, <[ jefri jquery ]>, !($routeProvider)->
 	$routeProvider
 		.when '/', template: angular.element \#hosts
+		.when '/hosts', template: angular.element \#hosts
 
 angular.dhcpmanmap do
 	menu: "navbar navbar-inverse navbar-fixed-top"
+	content: "container"
