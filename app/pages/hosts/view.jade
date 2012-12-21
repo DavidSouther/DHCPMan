@@ -1,8 +1,8 @@
-#hosts(ng:controller="Host")
+#hosts
 	header.title
 		h2 Hosts
 
-	.container
+	.container(ng:controller="Host")
 		table.hostTable
 			tr
 				th Hostname
@@ -15,3 +15,10 @@
 					inline(entity="host", property="ip")
 				td
 					inline(entity="host", property="mac")
+			tr
+				td
+					a.create(ng:click="create()")
+						i.icon-plus
+						| New Host
+				td
+				td
