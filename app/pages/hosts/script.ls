@@ -10,3 +10,4 @@ angular.module \dhcpman
 
 angular.dhcpmanmap do
 	title: "hero-unit"
+	hostTable: "table table-striped"
