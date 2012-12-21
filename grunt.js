@@ -94,7 +94,7 @@ module.exports = function(grunt) {
 					'build/vendors/': 'components/**',
 					'build/styles/img/': 'app/styles/img/**',
 					'build/images/': 'app/images/**',
-					'build/<% pkg.name %>.json': 'app/<% pkg.name %>.json'
+					'build/<%= pkg.name %>.json': 'app/<%= pkg.name %>.json'
 				}
 			}
 		},
