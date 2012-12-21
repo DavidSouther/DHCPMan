@@ -11,11 +11,11 @@ angular.classmap = !(module, map)-->
 
 angular.dhcpmanmap = angular.classmap \dhcpman
 
-
 angular.module \dhcpman, <[ jefri jquery ui ]>, !($routeProvider)->
 	$routeProvider
-		.when '/', template: angular.element \#hosts
-		.when '/hosts', template: angular.element \#hosts
+		.when '/', template: jQuery.template \#hosts
+		.when '/hosts', template: jQuery.template \#hosts
+		.when '/routers', template: jQuery.template \#routers
 
 angular.dhcpmanmap do
 	menu: "navbar navbar-inverse navbar-fixed-top"

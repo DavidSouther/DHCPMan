@@ -9,28 +9,33 @@ html(lang="en")
 		link(rel="stylesheet", href="styles/dhcpman.css")
 
 		//- In Dependency order, or close enough.
-		script(src="vendors/jquery/jquery.min.js")
+		script(src="http://code.jquery.com/jquery-1.8.3.js")
+		script
+			jQuery.template = function(tplSel) {
+				return jQuery("#templates " + tplSel).html()
+			}
+
 		//- script(src="vendors/jquery-mobile/compiled/jquery.mobile.min.js")
+		script(src="vendors/bootstrap/docs/assets/js/bootstrap.min.js")
 		script(src="vendors/underscore/underscore-min.js")
 		script(src="vendors/superscore/lib/superscore.min.js")
-		script(src="vendors/bootstrap/docs/assets/js/bootstrap.min.js")
 
 		script(src="vendors/jefri/min.js")
 		script(src="vendors/jefri/stores/min.js")
 
-		script(src="vendors/AngularJS/angular.js")
+		script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js")
 		script(src="vendors/angular-ui/build/angular-ui.js")
 
-
-	body(ng:app="dhcpman")
-		.menu
-			.navbar-inner
-				.container
-					ul.nav
-						li
-							a(href="#/hosts") Hosts
-
-		.content
+	body
+		.app(ng:app="dhcpman")
+			.menu
+				.navbar-inner
+					.container
+						ul.nav
+							li
+								a(href="#/hosts") Hosts
+							li
+								a(href="#/routers") Routers
 			ng:view
 
 		#templates(style="display:none")
