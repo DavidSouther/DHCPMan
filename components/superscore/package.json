@@ -1,0 +1,44 @@
+{
+  "name": "superscore",
+  "title": "Superscore",
+  "description": "Extensions to underscore.",
+  "version": "0.3.2",
+  "homepage": "https://github.com/DavidSouther/superscore",
+  "author": {
+    "name": "David Souther",
+    "email": "davidsouther@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/DavidSouther/superscore.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DavidSouther/superscore/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/DavidSouther/superscore/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/superscore",
+  "engines": {
+    "node": "*"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "underscore": ">= 1",
+    "request": "*"
+  },
+  "devDependencies": {
+    "grunt-contrib": "*",
+    "grunt-livescript": "*",
+    "grunt-jasmine-node": "*",
+    "grunt-docco": "*",
+    "requirejs": "*",
+    "grunt": "~0.3.17"
+  },
+  "keywords": []
+}
