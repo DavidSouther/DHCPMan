@@ -40,6 +40,12 @@
                 },
                 "name": {
                     "type": "string"
+                },
+                "gateway": {
+                    "type": "string"
+                },
+                "mask": {
+                    "type": "string"
                 }
             },
             "relationships": {
