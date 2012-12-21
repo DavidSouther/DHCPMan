@@ -1,0 +1,47 @@
+!!!
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
+		title DHCPMan
+		link(rel="stylesheet", href="vendors/bootstrap/docs/assets/css/bootstrap.css")
+		link(rel="stylesheet", href="styles/dhcpman.css")
+
+		//- In Dependency order, or close enough.
+		script(src="vendors/jquery/jquery.min.js")
+		//- script(src="vendors/jquery-mobile/compiled/jquery.mobile.min.js")
+		script(src="vendors/underscore/underscore-min.js")
+		script(src="vendors/superscore/lib/superscore.min.js")
+		script(src="vendors/bootstrap/docs/assets/js/bootstrap.min.js")
+
+		script(src="vendors/jefri/min.js")
+		script(src="vendors/jefri/stores/min.js")
+
+		script(src="vendors/AngularJS/angular.js")
+
+	body(ng:app="dhcpman")
+		.menu
+			.navbar-inner
+				.container
+					ul.nav
+						li
+							a(href="#/hosts") Hosts
+
+		.content
+			ng:view
+
+		#templates(style="display:none")
+			//- include ../pages.html
+
+			//- include ../templates.html
+
+		script(src="scripts/app.js")
+		script(src="scripts/services.js")
+		script(src="scripts/filters.js")
+		//- script(src="scripts/controllers.js")
+		script(src="scripts/directives.js")
+		script(src="scripts/components.js")
+		script(src="scripts/pages.js")
+
+		//- script(src="dist/modeler.min.js")
+		//- script(src="dist/modeler.ls.js")
