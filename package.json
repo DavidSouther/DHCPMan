@@ -1,0 +1,49 @@
+{
+  "name": "dhcpman",
+  "title": "DHCP Manager",
+  "description": "Manage and configure network layouts.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/southerd/dhcpman",
+  "author": {
+    "name": "David Souther",
+    "email": "davidsouther@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/southerd/dhcpman.git"
+  },
+  "bugs": {
+    "url": "https://github.com/southerd/dhcpman/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/southerd/dhcpman/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/dhcpman",
+  "engines": {
+    "node": "*"
+  },
+  "scripts": {
+    "test": "grunt test",
+    "start": "node lib/dhcpman.js"
+  },
+  "dependencies": {
+    "superscore": "*",
+    "jquery": ">= 1",
+    "jefri": ">=1",
+    "jefri-stores": "*",
+    "jefri-server": "*",
+    "express": "*"
+  },
+  "devDependencies": {
+    "grunt-livescript": "*",
+    "grunt-contrib": "*",
+    "grunt-wrap": "*",
+    "requirejs": "*",
+    "grunt": "~0.3.17",
+    "jefri-modeler": "*"
+  },
+  "keywords": []
+}
