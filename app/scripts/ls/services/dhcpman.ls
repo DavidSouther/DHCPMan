@@ -2,6 +2,7 @@ dhcpman = (JEFRi)->
 	class dhcpman
 		->
 			JEFRi.ready.then !~>
+				_.request.post "#{@ENDPOINT}load/", {data: '{"context": "http://localhost:3000/dhcpman.json"}', dataType: "application/json"}
 				@load!
 				@loaded <: {}
 
@@ -25,6 +26,16 @@ dhcpman = (JEFRi)->
 				h = JEFRi.build \Host, {hostname: host[0], ip: host[1], mac: host[2]}
 				h.router host[3]
 
+		save: !->
+			t = new window.JEFRi.Transaction!
+			t.add @hosts
+			t.add @routers
+			storeOptions =
+				remote: @ENDPOINT
+				runtime: JEFRi
+			s = new window.JEFRi.Stores.PostStore(storeOptions)
+			s.execute 'persist', t
+
 		create: !(which)->
 			switch which
 			| \Host => @hosts.push JEFRi.build \Host, {hostname: "New Host", ip: "0.0.0.0", mac: "00:00:00:00:00:00"}
@@ -35,6 +46,7 @@ dhcpman = (JEFRi)->
 		routers: []
 
 		NAMESPACE: _.UUID.v5 \dhcpman
+		ENDPOINT: 'http://localhost:3000/'
 
 	new dhcpman!
 
