@@ -2,7 +2,6 @@ dhcpman = (JEFRi)->
 	class dhcpman
 		->
 			JEFRi.ready.then !~>
-				_.request.post "#{@ENDPOINT}load/", {data: '{"context": "http://localhost:3000/dhcpman.json"}', dataType: "application/json"}
 				@load!
 				@loaded <: {}
 
@@ -35,6 +34,9 @@ dhcpman = (JEFRi)->
 				runtime: JEFRi
 			s = new window.JEFRi.Stores.PostStore(storeOptions)
 			s.execute 'persist', t
+
+		write: !->
+			_.request.post "#{@ENDPOINT}write/"
 
 		create: !(which)->
 			switch which
